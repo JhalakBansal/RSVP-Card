@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>You're Invited!</title>
+<style>
+body {
+background: #fdf6f0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+font-family: 'Georgia', serif;
+}
+
+.card-container {
+position: relative;
+width: 400px;
+cursor: pointer;
+transition: transform 0.4s ease-in-out;
+}
+
+.card-container img {
+width: 100%;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+transition: opacity 0.5s ease-in-out;
+}
+
+.open-invite {
+display: none;
+flex-direction: column;
+align-items: center;
+background: white;
+border-radius: 8px;
+padding: 20px;
+text-align: center;
+}
+
+.open-invite a {
+margin-top: 20px;
+text-decoration: none;
+background-color: #c3986b;
+color: white;
+padding: 10px 20px;
+border-radius: 5px;
+font-weight: bold;
+transition: background 0.3s;
+}
+
+.open-invite a:hover {
+background-color: #a37c55;
+}
+</style>
+</head>
+<body>
+
+<div id="card" class="card-container" onclick="openInvite()">
+<img id="cardImage" src="closed.jpg" alt="Sealed Envelope">
+</div>
+
+<div id="inviteContent" class="open-invite" style="display: none;">
+<img src="open.jpg" alt="Open Invitation" style="width: 100%; border-radius: 8px;">
+<p style="margin-top: 15px;">You're invited! Please RSVP below:</p>
+<a href="https://your-google-form-link" target="_blank">RSVP Now</a>
+</div>
+
+<script>
+function openInvite() {
+document.getElementById('card').style.display = 'none';
+document.getElementById('inviteContent').style.display = 'flex';
+}
+</script>
+
+</body>
+</html>
